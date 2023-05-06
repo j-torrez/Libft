@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h>s
 
 int ft_isascii(int c)
 {
