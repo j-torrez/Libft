@@ -8,15 +8,12 @@
 
 void *ft_memset(void *s, int c, size_t n)
 {
-    size_t  i; 
-    unsigned char *newstr; //Create a new pointer to object, to be filled. 
+    size_t  i;  
 
     i = 0; 
-    newstr = (unsigned char *)s;
-
     while (i < n) 
     {
-        newstr[i++] = (unsigned char)c; //Filled the array with the character for each iteration
+        ((unsigned char *) s)[i++] = c; //Filled the array with the character for each iteration
     }
     return (s); //return s, because point to the start of memory block that was filled (newstr)
 }
@@ -26,7 +23,7 @@ int main(void)
     char s[50] = "Hello World!";
     printf("Before memset(): %s\n", s);
 
-    ft_memset(s, 'z', 5); //fill with s 
+    ft_memset(s, 'z', 5); //fill with z
     printf("After memset(): %s\n", s);
 
     return 0;
