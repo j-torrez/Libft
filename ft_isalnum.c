@@ -16,7 +16,7 @@ int main(void)
 {
     unsigned char c;
 
-    c = '4';
+    c = '-';
     if (isalnum(c))
     {
         printf("%c, Is alphanum", c);
