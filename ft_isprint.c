@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int isprint(c)
+int ft_isprint(c)
 {
     if (c >= 32 && c <= 126)
     {
