@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "libft.h"
 
 size_t ft_strlen(const char *s)
 {
@@ -11,7 +11,7 @@ size_t ft_strlen(const char *s)
     }
     return (i); 
 }
-
+/*
 int main(void)
 {
     char s [] = "Hello World";
@@ -19,4 +19,4 @@ int main(void)
 
     printf("The total lenght is %d. \n", result);
     return(0);
-}
+} */
