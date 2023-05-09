@@ -1,1 +1,4 @@
-int atoi(const char *nptr);
+int atoi(const char *nptr)
+{
+    
+}
