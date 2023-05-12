@@ -1,16 +1,29 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jtorrez- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/12 15:42:39 by jtorrez-          #+#    #+#             */
+/*   Updated: 2023/05/12 17:11:09 by jtorrez-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_isalpha(int c)
+#include "libft.h"
+
+int	ft_isalpha(int c)
 {
-    if ((c  >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-    {
-        return 1; 
-    }
-    else
-    {
-        return 0;
-    }
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }
+/*
 int main(void)
 {
     unsigned char d = 'Z';
@@ -22,9 +35,9 @@ int main(void)
     {
         printf("Doesn't belong Alpha");
     }
-}
+}   */
 
-/* 
+/*
 #include <ctype.h>
 #include <stdio.h>
 

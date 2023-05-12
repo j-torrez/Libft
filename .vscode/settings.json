@@ -1,5 +1,6 @@
 {
-    "files.associations": {
-        "ft_strchr": "c"
-    }
+  "files.associations": {
+    "ft_strchr": "c",
+    "libft.h": "c"
+  }
 }
