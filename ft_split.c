@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jtorrez- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/13 15:28:50 by jtorrez-          #+#    #+#             */
-/*   Updated: 2023/05/15 13:48:48 by jtorrez-         ###   ########.fr       */
+/*   Created: 2023/05/15 14:53:41 by jtorrez-          #+#    #+#             */
+/*   Updated: 2023/05/15 16:42:43 by jtorrez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-char	*ft_strtrim(char const *s1, char const *set)
+char **ft_split(char const *s, char c)
 {
-	char	*str;
-	int		i;
-	int		j;
+	int len;
+	int i;
 
-	if (!s1)
-		return (0);
-	if (!set)
-		return (ft_strdup(s1));
+	len = ft_strlen(s);
 	i = 0;
-	j = (ft_strlen(s1) - 1);
-	while (s1[i] && ft_strchr(set, s1[i]))
-		i++;
-	while (s1[i] && ft_strchr(set, s1[j]))
-		j--;
-	str = ft_substr(s1, i, ((j - i) + 1));
-	return (str);
 }
+
+int	main(void)
+{
+	
+}
+
