@@ -4,6 +4,8 @@ void    modifychar(unsigned int index, char *str)
 {
     str[index] = str[index] + index;
 }   */
+
+/* We use &s[i] because the function is expecting a pointer to char*/
 void ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
     size_t  i;
