@@ -6,10 +6,9 @@
 /*   By: jtorrez- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 14:53:41 by jtorrez-          #+#    #+#             */
-/*   Updated: 2023/05/15 16:42:43 by jtorrez-         ###   ########.fr       */
+/*   Updated: 2023/05/20 14:04:02 by jtorrez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 #include <stdio.h>
 /* *count -> numbers of substring are
@@ -35,7 +34,7 @@ char **ft_split(char const *s, char c)
 		}
 	}
 }*/
-
+/*
 static int count_substr(char *s, char c)
 {
 	size_t i;
@@ -62,4 +61,4 @@ int main(void)
 	result = count_substr(s, ' ');
 	printf("Total substring is: %d\n", result);
 	return (0);
-}
+}	*/
