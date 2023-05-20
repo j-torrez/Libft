@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 #include <stdio.h>
-/* *count -> numbers of substring are
+/* *count -> numbers of substring ar
 	*count = 0, we are dereferencing the pointer
 	to actually set the value that is pointing to 0*/
 
