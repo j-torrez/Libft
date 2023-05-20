@@ -6,59 +6,73 @@
 /*   By: jtorrez- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 14:53:41 by jtorrez-          #+#    #+#             */
-/*   Updated: 2023/05/20 16:57:39 by jtorrez-         ###   ########.fr       */
+/*   Updated: 2023/05/20 18:42:30 by jtorrez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include "libft.h"
 /* *count -> numbers of substring are
 	*count = 0, we are dereferencing the pointer
 	to actually set the value that is pointing to 0*/
 
-/*
-char **ft_split(char const *s, char c)
-{
-	int *count;
-	size_t	len;
-	size_t	i;
+#include "libft.h"
 
-	len = ft_strlen(s);
-	*count = 0;
+static int	count_words(const char *str, char c)
+{
+	int	i;
+	int	trigger;
+
 	i = 0;
-	while (i < len)
+	trigger = 0;
+	while (*str)
 	{
-		while (i < len)
+		if (*str != c && trigger == 0)
 		{
-			if(s[i] == c)
-				i++;
+			trigger = 1;
+			i++;
 		}
+		else if (*str == c)
+			trigger = 0;
+		str++;
 	}
-}*/
-
-static int count_substr(char *s, char c)
-{
-	size_t i;
-	size_t count;
-
-	i = 0;
-	count = 0;
-	while (s[i] != '\0')
-	{
-		while (s[i] == c)
-			i++;
-		if (s[i] != c && s[i])
-			count++;
-		while (s[i] != c && s[i])
-			i++;
-	}
-	return (count);
+	return (i);
 }
 
-int main(void)
+static char	*word_dup(const char *str, int start, int finish)
 {
-	int result;
-	char s[] = " He lo Wo rld How ds sd s sdsd sdsd sd";
-	result = count_substr(s, ' ');
-	printf("Total substring is: %d\n", result);
-	return (0);
+	char	*word;
+	int		i;
+
+	i = 0;
+	word = malloc((finish - start + 1) * sizeof(char));
+	while (start < finish)
+		word[i++] = str[start++];
+	word[i] = '\0';
+	return (word);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	size_t	i;
+	size_t	j;
+	int		index;
+	char	**split;
+
+	split = malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!s || !(split))
+		return (0);
+	i = 0;
+	j = 0;
+	index = -1;
+	while (i <= ft_strlen(s))
+	{
+		if (s[i] != c && index < 0)
+			index = i;
+		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
+		{
+			split[j++] = word_dup(s, index, i);
+			index = -1;
+		}
+		i++;
+	}
+	split[j] = 0;
+	return (split);
 }

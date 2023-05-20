@@ -6,7 +6,7 @@
 /*   By: jtorrez- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 15:38:45 by jtorrez-          #+#    #+#             */
-/*   Updated: 2023/05/12 16:48:57 by jtorrez-         ###   ########.fr       */
+/*   Updated: 2023/05/20 18:51:06 by jtorrez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,15 @@ of the string which is the null character is located*/
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	int			i;
+	const char	*ini;
 
+	ini = s;
 	i = ft_strlen(s);
-	while (i >= 0)
-	{
-		if (s[i] == c)
-		{
-			return ((char *)s + i);
-		}
-		i--;
-	}
+	s = (s + i);
+	while (*s != *ini && c != *s)
+		s--;
+	if (c == *s)
+		return ((char *)s);
 	return (0);
 }
