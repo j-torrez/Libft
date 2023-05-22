@@ -6,20 +6,20 @@
 /*   By: jtorrez- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 16:28:20 by jtorrez-          #+#    #+#             */
-/*   Updated: 2023/05/13 16:42:01 by jtorrez-         ###   ########.fr       */
+/*   Updated: 2023/05/22 14:37:23 by jtorrez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void ft_putchar(char c, int fd)
+static void	ft_putchar(char c, int fd)
 {
 	write(fd, &c, 1);
 }
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	long nb;
+	long	nb;
 
 	nb = n;
 	if (nb < 0)
